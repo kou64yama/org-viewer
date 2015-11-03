@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES6"
+  },
+  "files": [
+    "gulpfile.babel.js",
+    "app/scripts.babel/chromereload.js",
+    "app/scripts.babel/injected.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "app/scripts"
+  ]
+}
