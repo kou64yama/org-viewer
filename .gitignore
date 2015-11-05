@@ -1,5 +1,5 @@
 node_modules
 *.log
-app/scripts.babel
-app/styles.stylus
+app/scripts
+app/styles
 dist
