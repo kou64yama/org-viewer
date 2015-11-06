@@ -96,7 +96,7 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('manifest', () => {
+gulp.task('manifest', ['styles', 'scripts'], () => {
   return gulp.src('app/manifest.json')
     .pipe($.chromeManifest({
       background: {
@@ -110,9 +110,9 @@ gulp.task('manifest', () => {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', del.bind(null, ['.tmp', 'dist', 'app/{scripts,styles}']));
 
-gulp.task('build', ['styles', 'scripts', 'images', 'manifest', 'extras'], () => {
+gulp.task('build', ['images', 'manifest', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build'}));
 });
 
